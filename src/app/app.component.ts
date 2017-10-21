@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 
 import { ShipperModel } from './shipper-model';
 import { GatewayServiceService } from './gateway-service.service';
@@ -7,7 +7,7 @@ import { GatewayServiceService } from './gateway-service.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   providers: [GatewayServiceService],
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'] 
 })
 
 export class AppComponent implements OnInit {
@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
   constructor(private service: GatewayServiceService) { }
 
   ngOnInit() {
-    this.service.getShippers().subscribe(shippers => this.shippers = shippers);
+    this.service.getShippers().subscribe(shippers => this.shippers = shippers, err => console.log("Getting Shippers Error: " + err));
   }
 
 }
