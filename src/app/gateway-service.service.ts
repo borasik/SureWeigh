@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http, Response, RequestOptions, Headers} from '@angular/http';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
 import { ShipperModel } from './shipper-model'
@@ -14,6 +14,14 @@ export class GatewayServiceService {
   }
 
   getShippers(): Observable<ShipperModel[]> {
-    return this.http.get('http://ppswtest.azurewebsites.net/api/values').map(this.extractData);
+    let headers = new Headers(
+      {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': '*'
+       }
+    );
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.get('http://ppswtest.azurewebsites.net/api/values', options).map(this.extractData);
   }
 }

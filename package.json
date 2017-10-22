@@ -1,5 +1,5 @@
 {
-  "name": "sure-weigh", 
+  "name": "sure-weigh",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "private": true,  
+  "private": true,
   "dependencies": {
     "@angular/animations": "^4.2.4",
     "@angular/common": "^4.2.4",
@@ -21,8 +21,12 @@
     "@angular/platform-browser": "^4.2.4",
     "@angular/platform-browser-dynamic": "^4.2.4",
     "@angular/router": "^4.2.4",
+    "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
+    "jquery": "^3.2.1",
+    "mydatepicker": "^2.0.32",
     "rxjs": "^5.4.2",
+    "tether": "^1.4.0",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {

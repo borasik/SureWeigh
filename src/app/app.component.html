@@ -1,20 +1,51 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome AlexXX to {{title}}!
-  </h1>
-  <img width="310" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2> 
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">{{shippers[0].BOL}}</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="container" style="width: 80%; background-color: rgb(228, 232, 236);">
+  <div class="row" style="margin-top: 10px;">
+    <!-- <img src="/dist/assets/logo.png" alt="logo"> -->
+    <div class="col-lg-2 col-lg-offset-5">
+      <img src='logo.png' alt="logo">
+    </div>
+  </div>
+  <div class="row" style="margin-top: 50px;">
+    <div class="col-lg-4" style="font-size: 2.0em;color:rgb(32, 5, 122);">
+      <span style="padding-left: 20px;">Welcome Back, Nick!</span>
+    </div>
+    <div class="col-lg-5">
+       
+        <my-date-picker [options]="myDatePickerOptions"
+        [placeholder]="placeholder"
+        (dateChanged)="onDateChanged($event)"
+        [selDate]="selectedDate"></my-date-picker>
+       
+    </div>
+    <div class="col-lg-3">
+        <i style="font-size: 2.5em;color:rgb(241, 10, 10); margin-right:22px;" class="fa fa-plus" aria-hidden="true"></i>
+        <i style="font-size: 2.5em;color:rgb(73, 70, 70); margin-right:22px;" class="fa fa-search-plus" aria-hidden="true"></i>
+        <i style="font-size: 2.5em;color:rgb(73, 70, 70); margin-right:22px;" class="fa fa-users" aria-hidden="true"></i>
+        <i style="font-size: 2.5em;color:rgb(73, 70, 70); margin-right:22px;" class="fa fa-bar-chart" aria-hidden="true"></i>
+        <i style="font-size: 2.5em;color:rgb(73, 70, 70); margin-right:22px;" class="fa fa-gear" aria-hidden="true"></i>
+        <i style="font-size: 2.5em;color:rgb(73, 70, 70); margin-right:22px;" class="fa fa-caret-square-o-right" aria-hidden="true"></i>
+    </div>
+  </div>
+  <div class="row" style="margin: 10px 0px 20px 0px;">
+    <div style="border-top: 2px solid gray"></div>
+  </div>
+  <div class="row">
+    <div class="card col-lg-3" *ngFor="let shipper of shippers">
+      <div style="padding: 20px;" [ngStyle]="{'background-color': getBackGroundColor(shipper.Status)}"
+      style="border: 1px black solid; border-radius: 10px ; margin-bottom: 20px;">
+        <div style="padding-left:30px;">
+          <div style="font-size: 1.5em; color:white; margin-top:10px;"> {{ shipper.Shipper }}</div>
+          <div style="font-size: 1.1em; color:white"> B.O.L: {{ shipper.BOL }}</div>
+          <div style="font-size: 1.1em; color:white"> Phone: {{ shipper.Phone }}</div>
+          <div style="font-size: 1.1em; color:white"> Email: {{ shipper.Email }}</div>
+          <div style="font-size: 1.1em; color:white; margin-top: 10px;"> Driver: {{ shipper.Driver }}</div>
+          <div style="font-size: 1.1em; color:white; margin-bottom: 10px;"> Phone: {{ shipper.DriverPhone }}
+            <span style="color:white; margin-left: 30px;" class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+            <span style="color:white; margin-left: 15px;" class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+          </div>
+        </div>
+      </div>
+    </div>
 
+  </div>
+</div>
