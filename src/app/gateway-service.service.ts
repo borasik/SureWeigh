@@ -16,8 +16,8 @@ export class GatewayServiceService {
   getShippers(): Observable<ShipperModel[]> {
     let headers = new Headers(
       {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Headers': '*'
+        // 'Access-Control-Allow-Origin': '*',
+        // 'Access-Control-Allow-Headers': '*'
        }
     );
     let options = new RequestOptions({ headers: headers });
